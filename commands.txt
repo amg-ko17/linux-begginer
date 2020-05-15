@@ -1,0 +1,684 @@
+    1  whoami
+    2  cd
+    3  ls
+    4  exit
+    5  echo
+    6  ls -a 
+    7  ls
+    8  cp .bashrc bashrc_backup
+    9  ls -1
+   10  ls -a
+   11  vi .bashrc
+   12  nano .bashrc
+   13  ls -a
+   14  nano .bashrc
+   15  ls
+   16  docker run -d --name $USER -v ~/Desktop:/mnt -it ubuntu
+   17  ls
+   18  docker run -d --name $USER -v ~/Desktop:/mnt -it ubuntu
+   19  exit 
+   20  whoami
+   21  cd ..
+   22  pwd
+   23  ls
+   24  mkdir mydemo
+   25  ls
+   26  cp /home/adenreleg/linux/basic/* mydemo
+   27  cp /home/manager/linux/basic/* mydemo
+   28  ls
+   29  cd mydemo
+   30  pwd
+   31  ls
+   32  ls 
+   33  ls -l 
+   34  ls -lh
+   35  man ls
+   36  man ls 
+   37  ls
+   38  cp human.vcf towork.txt
+   39  ls
+   40  move towork.txt variants.txt
+   41  mv towork.txt variants.txt
+   42  ls
+   43  head variants.txt
+   44  head -n 2 variants.txt
+   45  man head 
+   46  head -n 10 variants.txt 
+   47  head -n 10 variants.txt > variants10.txt
+   48  ls
+   49  cat variants10.txt
+   50  tail variants.txt
+   51  tail -n 2 variants.txt 
+   52  ls -l
+   53  rm variants10.txt
+   54  ls
+   55  ls-l
+   56  ls -l
+   57  more variants.txt
+   58  less variants.txt
+   59  grep A variants.txt
+   60  grep -w A variants.txt
+   61  man w
+   62  grep '\sA\s' variants.txt
+   63  grep '\sAT\s' variants.txt
+   64  grep '\sAT\s' variants.txt > at.txt
+   65  ls
+   66  head -n 5 at.txt
+   67  wc variants.txt
+   68  wc -l variants.txt
+   69  man wc 
+   70  wc -l at.txt 
+   71  grep '\sTA\s' variants.txt > ta.txt
+   72  ls
+   73  cat ta.txt
+   74  cat ta.txt at.txt
+   75  >cat ta.txt at.txt > taat.txt
+   76  cat ta.txt at.txt > taat.txt
+   77  ls
+   78  ls -lh
+   79  head taat.txt 
+   80  tail taat.txt
+   81  wc -l taat.txt
+   82  wc -l ta.txt
+   83  wc -1 at.txt
+   84  wc -l at.txt 
+   85  nano
+   86  nano file1.amg
+   87  pwd
+   88  ls
+   89  cat file1.amg 
+   90  nano
+   91  nano file1.amg 
+   92  head -n 2 variants.txt > twolines
+   93  ls
+   94  head twolines
+   95  cat twolines wc -1 < variants.txt
+   96  cat twolines wc -l < variants.txt
+   97  wc -l 
+   98  cat twolines
+   99  wc -l < variants.txt
+  100  wc -l variants.txt
+  101  tail -n 2 variants.txt
+  102  tail -n 2 variants.txt >> twolines
+  103  cat twolines
+  104  tail -n 2 variants.txt >> twolines
+  105  cat twolines
+  106  grep '\sAC\s' variants.txt
+  107  grep '\sAC\s' variants.txt | wc -l
+  108  grep '\sAC\s' variants.txt | grep Minus
+  109  grep '\sAC\s' variants.txt :  grep Minus
+  110  grep '\sAC\s' variants.txt | grep Minus : wc -l 
+  111  grep '\sAC\s' variants.txt | grep Minus |  wc -l 
+  112  man wget
+  113  wget hgdownload.cse.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz
+  114  ls
+  115  ls -l
+  116  ls -l ncbiRefSeq.txt.gz 
+  117  ls ncbiRefSeq.txt.gz 
+  118  ls -lh ncbiRefSeq.txt.gz 
+  119  head -n 2 ncbiRefSeq.txt.gz 
+  120  gunzip ncbiRefSeq.txt.gz 
+  121  head ncbiRefSeq.txt 
+  122  ls
+  123  man gunzip
+  124  ls -l ncbiRefSeq.txt 
+  125  ls -lh ncbiRefSeq.txt 
+  126  head ncbiRefSeq.txt 
+  127  grep -ivw chr1 ncbiRefSeq.txt 
+  128  grep -ivw chr1 ncbiRefSeq.txt | grep -i chr10 | head
+  129  grep -P 'chr10\s\+' ncbiRefSeq.txt 
+  130  cut -f13 ncbiRefSeq.txt | head 
+  131  cut -f2,13 ncbiRefSeq.txt | head 
+  132  cut -d$'\t' -f2,13 ncbiRefSeq.txt | head 
+  133  man cut
+  134  cut -d8 -f2,13 ncbiRefSeq.txt | head 
+  135  cut -f2,13 ncbiRefSeq.txt
+  136  cut -f2,13 ncbiRefSeq.txt | cut  d'.' -f1 > refseqids
+  137  cut -f2 ncbiRefSeq.txt | cut  d'.' -f1 > refseqids
+  138  cut -f2 ncbiRefSeq.txt 
+  139  cut -f2 ncbiRefSeq.txt | cut -d'.' -f1
+  140  cut -f2 ncbiRefSeq.txt | cut -d'.' -f1 > refseqid
+  141  cut -f2,13 ncbiRefSeq.txt > refseqnames
+  142  grep -E 'AT|TA' variants.txt > file2.txt 
+  143  head files2.txt
+  144  head file2.txt
+  145  awk
+  146  ls
+  147  awk '//' transcriptome.gtf 
+  148  awk '' transcriptome.gtf 
+  149  awk '{print}' transcriptome.gtf 
+  150  awk '{print $0}' transcriptome.gtf 
+  151  awk '//{print}' transcriptome.gtf 
+  152  awk '//{print $2,$3,$4}' transcriptome.gtf 
+  153  awk '/TTTY17B /{print}' transcriptome.gtf 
+  154  awk '/TTTY17B/ {print}' transcriptome.gtf 
+  155  awk 'NR==1 {pirnt; exit}' ex.txt 
+  156  awk 'NR==1 {print; exit}' ex.txt 
+  157  head ex.txt
+  158  awk '/NOVEL/ {print}' transcriptome.gtf 
+  159  awk 'NR==1' {print; exit}' transcriptome.gtf 
+  160  ls
+  161  whoami
+  162  awk '/^[0-9]/ {print}' ex.txt
+  163  awk '{if ($4 >= 129299628 && $5 >= 143038471) print}' transcriptome.gtf 
+  164  awk '$0 !~/^X/ {print $0' ex.txt
+  165  awk '$0 !~/^X/ {print $0} ex.txt
+  166  awk '$0 !~ /^X/ {print $0} ex.txt
+  167  awk '$0 !~ /^X/ {print $0}' ex.txt
+  168  awk '/Corona/ {print $1, $2 "Virus: "$1, "
+  169  awk '/Corona/ {print $1, $2 "Virus: "$1, "Strain: "$2} ex.txt
+  170  awk '/Corona/ {print $1, $2 "Virus: "$1, "Strain: "$2}' ex.txt
+  171  awk '/Corona/ {print $1, $2 "Virus: "$1, "Strain: "$2} ex.txt
+  172  awk '/Corona/ {print $1, $2 "Virus: "$1, "Strain:" $2}' ex.txt
+  173  whoami 
+  174  nano hello.sh
+  175  ls
+  176  cat hello.sh 
+  177  hello.sh
+  178  ./hello.sh
+  179  chmod 755 hello.sh 
+  180  ls
+  181  ./hello.sh
+  182  banana=variable
+  183  ls
+  184  echo banana
+  185  banana=cherry 
+  186  ls
+  187  echo $banana
+  188  banana=apple
+  189  echo $banana
+  190  nano hello.sh 
+  191  ./hello.sh
+  192  nano hello.sh 
+  193  nano hello.sh
+  194  ./hello.sh
+  195  echo $SHELL
+  196  history > day1.txt
+  197  head -n 10
+  198  head -n 10 day1.txt
+  199  yep
+  200  exit
+  201  exit 
+  202  exit
+  203  ls
+  204  cd Desktop
+  205  ls
+  206  cd linux
+  207  ls
+  208  bwa
+  209  cd ..
+  210  ls
+  211  cd ..
+  212  ls
+  213  pwd
+  214  ls
+  215  cd ~/Desktop/variant
+  216  pwd
+  217  cd Desktop
+  218  ls
+  219  cd dnaseq
+  220  ls
+  221  cd ..
+  222  ls
+  223  cd ..
+  224  ls 
+  225  exit
+  226  docker run -d --name $USER -v ~/Desktop:/mnt -it ubuntu
+  227  docker exec -it $USER bash
+  228  docker run -d --name $USER -v ~/Desktop:/mnt -it ubuntu
+  229  docker exec -it $USER bash
+  230  ce ~/Desktop/linuc/advanced/emboss/sample
+  231  cd ~/Desktop/linux/advanced/emboss/sample
+  232  cd ~/Desktop
+  233  ls
+  234  cd linux
+  235  ls
+  236  cd advanced
+  237  ls 
+  238  cd emboss
+  239  ls
+  240  cd sample_sequences
+  241  ls
+  242  ls -lh *fasta
+  243  tar cf archive2.tar *fasta
+  244  ls -lh
+  245  tar xf archive2.tar
+  246  ls
+  247  rm bos.archive.tar.gz
+  248  tar czf bos.archive.tar
+  249  tar czf bos.archive.tar.gz bos
+  250  ls -h
+  251  ls -lh
+  252  tar xzvf bos.archive.tar.gz bos
+  253  whoami
+  254  who
+  255  w
+  256  man fdisk
+  257  source /etc/profile.d/markcbm.sh
+  258  cp -R /home/manager/linux Desktop/.
+  259  ls
+  260  ls Desktop
+  261  cd Desktop/linux/
+  262  pwd 
+  263  cd ..
+  264  cd /Desktop/linux/advanced/rnaseq/
+  265  pwd
+  266  cd ..
+  267  pwd
+  268  cd ~/Desktop/linux/advanced/rnaseq/
+  269  fastqc fastq/*.fastq
+  270  cd Desktop/linux/advanced/rnaseq/
+  271  pwd
+  272  cd Desktop/linux/advanced/rnaseq/
+  273  cd index
+  274  pwd
+  275  ls
+  276  clear
+  277  cd index
+  278  cd ~/Desktop/linux/advanced/rnaseq/
+  279  cd index
+  280  bowtie-build mm9_chr1.fa mm9_chr1
+  281  tophat2  -G mm9_chr1.gtf -o  tophat_wt/  index/mm9_chr1 fastq/myoblast_wt.fastq
+  282  cd ..
+  283  tophat2  -G mm9_chr1.gtf -o  tophat_wt/  index/mm9_chr1 fastq/myoblast_wt.fastq
+  284  tophat2  -G mm9_chr1.gtf -o  tophat_del/  index/mm9_chr1 fastq/myoblast_del.fastq
+  285  pwd
+  286  ls
+  287  ls tophat_wt
+  288  ls tophat_del
+  289  cat tophat_wt/align_summary.txt 
+  290  cat tophat_del/align_summary.txt 
+  291  ls tophat_wt
+  292  pwd
+  293  samtools index tophat_wt/accepted_hits.bam 
+  294  ls
+  295  samtools index tophat_wt/accepted_hits.bam 
+  296  cuffdiff --no-update-check -o cuffdiff_out -L wt,del mm9_chr1.gtf tophat_wt/accepted_hits.bam tophat_del/accepted_hits.bam
+  297  ls -lh cuffdiff_out
+  298  ls
+  299  cd cuffdiff_out/
+  300  ls
+  301  head gene_exp.diff
+  302  pwd
+  303  man -L
+  304  man cuffdiff
+  305  cd ..
+  306  ls
+  307  cd ..
+  308  ls
+  309  cd Desktop
+  310  pwd
+  311  cd ..
+  312  ls
+  313  cd ..
+  314  ls
+  315  cd ..
+  316  ls
+  317  cd ~
+  318  ls
+  319  cd ~/
+  320  ls
+  321  history > day2.txt
+  322  ls
+  323  whoami
+  324  man bwa
+  325  man bwa mem 
+  326  man bwa mem
+  327  man less
+  328  man -R
+  329  -R
+  330  man
+  331  r
+  332  samtool
+  333  man samtool
+  334  man samtools
+  335  man samtools view 
+  336  man samtools index
+  337  q
+  338  exit
+  339  exit 
+  340  exit
+  341  pwd
+  342  cd Desktop
+  343  ls
+  344  cd ..
+  345  ls
+  346  base rnaseqpipe.sh 
+  347  bash rnaseqpipe.sh 
+  348  ls
+  349  wget hgdownload.cse.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz
+  350  l
+  351  ls 
+  352  gunzip ncbiRefSeq.txt.gz 
+  353  ls -l
+  354  head ncbiRefSeq.txt 
+  355  ls
+  356  grep -ivw chr ncbiRefSeq.txt | grep -i chr10 | head
+  357  cut -f2,13 ncbiRefSeq.txt > refseqnames
+  358  ls
+  359  head refseqnames 
+  360  paste refseqids refseqnames | head
+  361  cut -f2 ncbi
+  362  cut -f2 ncbiRefSeq.txt | cut -d'.' -f1 >refseqids
+  363  ls
+  364  head refseqids
+  365  paste refseqids refseqnames | head
+  366  paste refsequids refseqnames > refseqidnames
+  367  ls
+  368  head refseqidnames
+  369  rm refseqidnames
+  370  ls
+  371  paste refsequids refseqnames  > refseqidnames
+  372  paste refseqids refseqnames  > refseqidnames
+  373  ls
+  374  history refseqidnames
+  375  head refseqidnames
+  376  head refseqids
+  377  ls
+  378  head refseqidnames 
+  379  head knownToRefSeq.txt
+  380  history > challenge1.txt
+  381  clear 
+  382  docker pull ubuntu
+  383  docker images
+  384  docker exec -it $USER bash
+  385  history 
+  386  history > Rstudio challenge
+  387  history > rstudiochallenge
+  388  ls
+  389  cd ~/D
+  390  cd ~/Desktop/
+  391  ls
+  392  cd ~/Desktop/linux/advanced/my_first_repo/
+  393  ls -l
+  394  rm README.md
+  395  ls -l
+  396  echo "# myfirstrepo" > README.md
+  397  git version
+  398  git
+  399  lx
+  400  ls
+  401  git init
+  402  git add README.md 
+  403  git commit -m "first commit"
+  404  ls -lhtar 
+  405  git remote add origin https://github.com/amg-ko17/myfirstrepo.git
+  406  git clone https://github.com/anner/BIOF083_2020.git
+  407  git clone https://github.com/manner/BIOF083_2020.git
+  408  git remote add origin https://github.com/amg-ko17/linux-begginer.git
+  409  ls
+  410  git clone https://github.com/manner/BIOF083_2020.git
+  411  git clone https://github.com/amg-ko17/linux-begginer.git
+  412  ls
+  413  cd linux-begginer/
+  414  ls
+  415  git add .
+  416  git commit -m "first commit"
+  417  git push 
+  418  git push
+  419  get checkout -bdevelop
+  420  git checkout -b develop
+  421  git push origin develop
+  422  pwd 
+  423  cd ..
+  424  ls
+  425  cd ..
+  426  ls 
+  427  cron -l
+  428  crontab -l
+  429  crohntab -e
+  430  crontab -e
+  431  crontab -l
+  432  crontab -e
+  433  R
+  434  pwd
+  435  cd ..
+  436  cd ~
+  437  ls
+  438  pwd
+  439  nano
+  440  ls
+  441  echo 
+  442  echo hello.py
+  443  nano
+  444  nano hello.py
+  445  echo hello.py
+  446  nano hello.py 
+  447  bash hello.py 
+  448  nano
+  449  nano hello.py 
+  450  python3 hello.py 
+  451  nano
+  452  ls
+  453  python3 hello2.py 
+  454  nano hello2.py 
+  455  python hello2.py 
+  456  nano hello2.py 
+  457  python hello2.py 
+  458  nano hello2.py 
+  459  python3 hello2.py 
+  460  nano hello2.py 
+  461  python3 hello2.py 
+  462  pwd
+  463  cd advanced
+  464  cd ~/Desktop/linux/advanced/
+  465  ls
+  466  cd my_first_repo/
+  467  ls
+  468  find /home/adenreleg/hello
+  469  find /home/adenreleg/ -name hello
+  470  ls 
+  471  cd linux-begginer/
+  472  ls -a
+  473  cp ~/hello2.py 
+  474  cp ~/hello2.py .
+  475  ls 
+  476  git status
+  477  git add hello2.py 
+  478  git status
+  479  git commit -m "python2hello2" hello2.py 
+  480  git push -u origin master
+  481  git push 
+  482  git remote set-url origin https://github.com/amg-ko17/linux-begginer.git 
+  483  git push
+  484  git remote add origin https://github.com/amg-ko17/linux-begginer.git
+  485  get status
+  486  git status
+  487  git checkout master 
+  488  history 
+  489  cp ~/hello2.py .
+  490  git add
+  491  git add .
+  492  git commit -m "python2hello2" hello2.py 
+  493  git push
+  494  cd ..
+  495  rm -rf linux-begginer/
+  496  ls -a 
+  497  cd ..
+  498  git clone https://github.com/amg-ko17/linux-begginer.git
+  499  cp ~/hello2.py .
+  500  cd linux-begginer/
+  501  cp ~/hello2.py .
+  502  git status
+  503  git add .
+  504  git status
+  505  git commit -m "python2hello2" hello2.py 
+  506  git push
+  507  docker ps
+  508  docker ps -a
+  509  docker ps -s
+  510  docker ps --version
+  511  dockers --version
+  512  docker --version
+  513  docker pull ubuntu
+  514  docker images 
+  515  docker run -it -d --name $USER ubuntu
+  516  docker ps
+  517  docker exec -it $USER bash
+  518  docker stop $USER
+  519  docker rm  $USER
+  520  ls
+  521  docker pc
+  522  docker ps
+  523  docker run -d --name $USER -v ~/Desktop/mnt -it ubuntu
+  524  cp -R/home/manager/linux ~/Desktop/.
+  525  cp -R /home/manager/linux ~/Desktop/.
+  526  mkdir ~/Desktop/test
+  527  nano ~/Desktop/test/hi.txt
+  528  docker exec -it $USER bash
+  529  docker pull broadinstitute/gatk:4.1.3.0
+  530  docker run --name $USER.gatk -it broadinstitute/gatk:4.1.3.0
+  531  stop $USER.gatk
+  532  docker stop $USER.gatk
+  533  docker rm $USER.gatk
+  534  docker exec -it $USER bash
+  535  ls
+  536  ls -a
+  537  which git 
+  538  git clone https:github.com/taoliu/MACS.get
+  539  git clone https:github.com/taoliu/MACS.git
+  540  git clone https://github.com/taoliu/MACS.git
+  541  cd MACS
+  542  las
+  543  ls
+  544  python3 setup.py install
+  545  install --prefix /home/adenreleg
+  546  phython3 setup.py install --prefix /home/adenreleg
+  547  export PYTHONPATH=/home/userhome/lib/python3.6/site-packages:$PYTHONPATH
+  548  echo $PYTHONPATH
+  549  export PYTHONPATH=/home/adenreleg/lib/python3.6/site-packages:$PYTHONPATH
+  550  echo $PYTHONPATH
+  551  export PYTHONPATH=/home/adenreleg/lib/python3.6/site-package
+  552  $PATH
+  553  echo $PATH
+  554  export PATH=/home/userhome/bin:$PATH
+  555  alias python="python3"
+  556  python3 setup.py install --prefix /home/adenreleg/
+  557  python3 setup.py install --prefix /home/manager/
+  558  python3 setup.py install --prefix /home/adenreleg
+  559  export PYTHONPATH=/home/adenreleg/lib/python3.6/site-packages:$PYTHONPATH
+  560  python3 setup.py install --prefix /home/adenreleg
+  561  macs2 -h
+  562  ls
+  563  clear
+  564  docker extc -it $USER bash
+  565  docker exec -it $USER bash
+  566  docker stop $USER
+  567  docker rm $USER
+  568  pwd
+  569  samtools19 index tophat_wt/accepted_hits.bam
+  570  source /etc/profile.d/markcbm.sh
+  571  cd ~/Desktop/linux/advanced/rnaseq/
+  572  samtools index tophat_wt/accepted_hits.bam
+  573  samtools19 index tophat_del/accepted_hits.bam
+  574  cuffdiff --no-update-check -o cuffdiff_out -L wt,del mm9_chr1.gtf tophat_wt/accepted_hits.bam tophat_del/accepted_hits.bam
+  575  ls -lh cuffdiff_out
+  576  ls
+  577  cd ~/
+  578  ls
+  579  pwd
+  580  cd Desktop
+  581  ls
+  582  cd linux
+  583  ls
+  584  cd linux1
+  585  cd ..
+  586  ls
+  587  cd linux1
+  588  ls
+  589  cd/advanced
+  590  cd advanced
+  591  ls
+  592  cd my_first_repo/
+  593  ls
+  594  ls -l
+  595  ls
+  596  gitMay 15 19:36 tss_groups.count_tracking
+  597  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  598  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  599  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  600  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  601  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  602  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  603  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  604  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  605  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  606  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  607  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  608  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  609  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  610  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  611  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  612  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  613  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  614  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  615  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  616  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  617  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  618  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  619  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  620  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  621  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  622  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  623  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  624  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  625  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  626  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  627  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  628  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  629  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  630  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  631  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  632  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  633  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  634  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  635  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  636  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  637  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  638  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  639  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  640  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  641  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  642  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  643  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  644  adenreleg@ip-172-31-93-109:~/Desktop/linux/advancedMay 15 19:36 tss_groups.count_tracking
+  645  -rw-rw-r-- 1 adenreleg adenreleg 113K May 15 19:36 tss_groups.fpkm_tracking
+  646  -rw-rw-r-- 1 adenreleg adenreleg  76K May 15 19:36 tss_groups.read_group_tracking
+  647  -rw-rw-r-- 1 adenreleg adenreleg  87K May 15 19:35 var_model.info
+  648  clear
+  649  lis
+  650  ls
+  651  cd ..
+  652  ls
+  653  cd my_first_repo/
+  654  git commit -m "first commit"
+  655  cp ~/rnaseqpipe.sh 
+  656  cp ~/rnaseqpipe.sh .
+  657  ls
+  658  git commit -m "first rnaseq.sh"
+  659  git remote add origin https://github.com/amg-ko17/linux-begginer.git
+  660  git push -u origin master
+  661  git status
+  662  git commit 
+  663  git commit -m "my first RNAseq"
+  664  ls
+  665  cd ..
+  666  ls
+  667  cd
+  668  ls
+  669  cd linux1
+  670  cd Desktop
+  671  cd linux1/advanced/my_first_repo/
+  672  ls
+  673  cd ..
+  674  ls
+  675  cd linux-begginer/
+  676  ls
+  677  cp ~/rnaseqpipe.sh 
+  678  cp ~/rnaseqpipe.sh .
+  679  ls
+  680  git add .
+  681  git commit -m "myRNAseq"
+  682  git push 
+  683  history
+  684  history > commands.txt
